@@ -1,28 +1,28 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
-<h:head>
-	<title>Inicia session</title>
-	<style type="text/css">
-		.textPlacement {
-			margin: 12px;
-		}
-	</style>
-</h:head>
-<h:body>
-	<h2>JSF Authentication Example</h2>
-	<h:form id="loginForm">
-		<div id="userNameDiv" class="textPlacement">
-			<h:outputLabel value="Usuario: " />
-			<h:inputText value="#{login.user}" />
-		</div>
-		<div id="passwordDiv" class="textPlacement">
-			<h:outputLabel value="Clave: " />
-			<h:inputSecret value="#{login.password}" />
-		</div>
-		<div id="submitBtn" class="textPlacement">
-                    <h:commandButton value="Login" action="#{login.validate}" />
-		</div>
-	</h:form>
-</h:body>
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Inicia session</title>
+        <style type="text/css">
+            .textPlacement {
+                margin: 12px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h2>JSF Authentication Example</h2>
+        <h:form id="loginForm">
+            <h:panelGrid columns="4" cellpadding="5">
+                <h:outputLabel for="user" value="Usuario: " style="font-weight:bold"/>
+                <h:inputText id="user" value="#{login.user}" />
+
+                <h:outputLabel for="clave" value="Clave: " style="font-weight:bold"/>
+                <h:inputSecret id="clave" value="#{login.password}" />
+                <h:commandButton value="Login" action="#{login.validate}" />
+            </h:panelGrid>
+        </h:form>
+    </h:body>
 </html>
